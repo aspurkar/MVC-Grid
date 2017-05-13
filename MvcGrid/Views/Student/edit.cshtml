@@ -1,0 +1,54 @@
+﻿
+@model MvcGrid.Models.Student
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>edit</title>
+</head>
+<body>
+    <div>
+       @using (Html.BeginForm())
+       {
+            <table>
+             <tr>
+                <td>Student Id</td>
+                <td>@Model.StudentId
+                    @Html.HiddenFor(m => m.StudentId);
+                </td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>@Html.TextBoxFor(m=>m.Name)</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>@Html.TextBoxFor(m=>m.Email)</td>
+            </tr>
+            <tr>
+                <td>Mobile</td>
+                <td>@Html.TextBoxFor(m=>m.Mobile)</td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>@Html.TextBoxFor(m=>m.City)</td>
+            </tr>
+            <tr>
+                <td>Is Married</td>
+                <td>@Html.CheckBoxFor(m=>m.IsMarried)</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Save" />
+                </td>
+            </tr>
+            </table>
+       }
+    </div>
+    <p>
+        @Html.ActionLink("Back to list", "all")
+    </p>
+   
+</body>
+</html>

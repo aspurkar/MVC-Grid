@@ -1,0 +1,86 @@
+﻿@model MvcGrid.Models.Student
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>view2</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Student</legend>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Name)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Name)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Email)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Email)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Mobile)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Mobile)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.City)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.City)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.IsMarried)
+        </div>
+        <div class="display-field">
+           @if (Model.IsMarried)
+           {
+               <span>YES</span>
+           }
+            else
+            {
+                <span>NO</span>
+           }
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.About)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.About)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Gender)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Gender)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.AdmissionTypeId)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.AdmissionTypeId)
+        </div>
+    </fieldset>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id=Model.StudentId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

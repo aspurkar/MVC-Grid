@@ -1,0 +1,89 @@
+﻿@model MvcGrid.Models.Student
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>add</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("addstudent","student"))
+        {
+            <table>
+             <tr>
+                <td>Student Id</td>
+                <td>@Html.TextBoxFor(m=>m.StudentId)
+                </td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>@Html.TextBoxFor(m=>m.Name)</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>@Html.TextBoxFor(m=>m.Email)</td>
+            </tr>
+            <tr>
+                <td>Mobile</td>
+                <td>@Html.TextBoxFor(m=>m.Mobile)</td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>@Html.TextBoxFor(m=>m.City)</td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                   Male @Html.RadioButton("Gender","Male",true) 
+                    <span>   </span>
+                   Female  @Html.RadioButton("Gender","Female")
+                </td>
+            </tr>
+            <tr>
+                <td>Is Married</td>
+                <td>@Html.CheckBoxFor(m=>m.IsMarried)</td>
+            </tr>
+            <tr>
+                <td>Year Of Admission</td>
+               @* <td>@Html.DropDownListFor(m=>m.YearOfAdmission,
+                new SelectList(new string []{"2015","2016","2017"}))</td>*@
+               @* <td>@Html.DropDownListFor(m=>m.YearOfAdmission,
+                new SelectList(MvcGrid.Models.Student.GetYears()))</td>*@
+                
+               @* @{
+                    var items = new List<SelectListItem>();
+                    foreach (var type in MvcGrid.Models.Student.GetAdmissionTypes())
+                    {
+                        var item = new SelectListItem();
+                        item.Text = type.AdmissionTypeName;
+                        item.Value = type.AdmissionTypeId.ToString();
+                        items.Add(item);
+                    }
+                }*@
+                <td>@Html.DropDownListFor(m => m.AdmissionTypeId, MvcGrid.Models.Student.GetAdmissionTypes())
+                </td>
+            </tr>
+                <tr>
+                <td>Year Of Admission</td>
+                <td>@Html.ListBoxFor(m => m.AdmissionTypeId, MvcGrid.Models.Student.GetAdmissionTypes())</td>
+                </tr>
+                <tr>
+                <td>Tell us about yourself</td>
+                <td>@Html.TextAreaFor(m => m.About, new {cols=20,rows=20})</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Save" />
+                </td>
+            </tr>
+            </table>
+        }
+    </div>
+</body>
+</html>

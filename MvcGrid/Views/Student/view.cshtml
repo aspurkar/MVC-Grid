@@ -1,0 +1,43 @@
+﻿@{
+    Layout = null;
+}
+@model MvcGrid.Models.Student
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>view</title>
+</head>
+<body>
+    <div>
+        <table>
+           <tr>
+                <td>Student Id</td>
+                <td>@Html.Display("StudentId");
+                </td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>@Html.DisplayFor(m=>m.Name)</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>@Html.DisplayFor(m=>m.Email)</td>
+            </tr>
+            <tr>
+                <td>Mobile</td>
+                <td>@Html.DisplayFor(m=>m.Mobile)</td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>@Html.DisplayFor(m=>m.City)</td>
+            </tr>
+           
+        </table>
+    </div>
+    <p>
+        @Html.ActionLink("Back to list", "all")
+    </p>
+</body>
+</html>

@@ -1,0 +1,20 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+@model MvcGrid.Models.Student
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>delete</title>
+</head>
+<body>
+    <div>
+        <h3>Student with Id @Model.StudentId is deleted</h3>
+    </div>
+    <p>
+        @Html.ActionLink("Back to list", "all")
+    </p>
+</body>
+</html>
